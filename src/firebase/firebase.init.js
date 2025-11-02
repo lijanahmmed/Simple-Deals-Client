@@ -11,7 +11,7 @@ const firebaseConfig = {
   projectId: "smart-deals-6768c",
   storageBucket: "smart-deals-6768c.firebasestorage.app",
   messagingSenderId: "954044857203",
-  appId: "1:954044857203:web:15cda9eff195bb88e0a306"
+  appId: "1:954044857203:web:15cda9eff195bb88e0a306",
 };
 
 // Initialize Firebase
