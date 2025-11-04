@@ -13,7 +13,6 @@ const ProductDetails = () => {
     fetch(`http://localhost:3000/products/bids/${productId}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("bids for this product", data);
         setBids(data);
       });
   }, [productId]);
@@ -57,10 +56,10 @@ const ProductDetails = () => {
             timer: 1500,
           });
           //   // add the new bid to the state
-            newBid._id = data.insertedId;
-            const newBids = [...bids, newBid];
-            newBids.sort((a, b) => b.bid_price - a.bid_price);
-            setBids(newBids);
+          newBid._id = data.insertedId;
+          const newBids = [...bids, newBid];
+          newBids.sort((a, b) => b.bid_price - a.bid_price);
+          setBids(newBids);
         }
       });
   };
@@ -113,13 +112,6 @@ const ProductDetails = () => {
                   </button>
                 </fieldset>
               </form>
-
-              <div className="modal-action">
-                {/* <form method="dialog">
-                  if there is a button in form, it will close the modal
-                  <button className="btn">Cancel</button>
-                </form> */}
-              </div>
             </div>
           </dialog>
         </div>
@@ -170,7 +162,6 @@ const ProductDetails = () => {
                   </th>
                 </tr>
               ))}
-              {/* row 2 */}
             </tbody>
           </table>
         </div>
