@@ -51,11 +51,10 @@ const AuthProvider = ({ children }) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log("after getting token", data.token);
             localStorage.setItem("token", data.token);
           });
       } else {
-        // localStorage.removeItem("token");
+        localStorage.removeItem("token");
       }
       setLoading(false);
     });
