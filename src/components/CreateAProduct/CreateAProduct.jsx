@@ -1,10 +1,11 @@
-import axios from "axios";
 import React from "react";
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
+import useAxios from "../../Hooks/useAxios";
 
 const CreateAProduct = () => {
   const { user } = useAuth();
+  const axiosInstance = useAxios();
 
   const handleCreateAProduct = (e) => {
     e.preventDefault();
@@ -22,8 +23,7 @@ const CreateAProduct = () => {
       seller_name: user.displayName,
     };
 
-    axios.post("http://localhost:3000/products", newProduct).then((data) => {
-      console.log(data.data);
+    axiosInstance.post("/products", newProduct).then((data) => {
       if (data.data.insertedId) {
         Swal.fire({
           position: "top-end",
