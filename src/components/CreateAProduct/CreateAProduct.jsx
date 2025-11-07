@@ -38,6 +38,7 @@ const CreateAProduct = () => {
     });
   };
   
+  
   return (
     <div className="lg:w-1/5 mx-auto">
       <form onSubmit={handleCreateAProduct}>
